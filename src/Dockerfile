@@ -17,7 +17,7 @@ COPY src/Services/Services.csproj ./Services/
 COPY src/Persistence/Persistence.csproj ./Persistence/
 RUN dotnet restore './Server/Server.csproj'
 COPY . .
-RUN dotnet build './Server/Server.csproj' -c Release -o /app/build
+RUN dotnet build 'src/Server/Server.csproj' -c Release -o /app/build
 
 # Publish layer
 FROM build AS publish
