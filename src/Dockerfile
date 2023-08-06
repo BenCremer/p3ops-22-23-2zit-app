@@ -21,7 +21,7 @@ RUN dotnet build 'src/Server/Server.csproj' -c Release -o /app/build
 
 # Publish layer
 FROM build AS publish
-RUN dotnet publish './Server/Server.csproj' -c Release -o /app/publish
+RUN dotnet publish 'src/Server/Server.csproj' -c Release -o /app/publish
 
 # Final layer
 FROM base AS final
