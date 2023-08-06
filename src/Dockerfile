@@ -15,13 +15,13 @@ COPY src/Shared/Shared.csproj ./Shared/
 COPY src/Domain/Domain.csproj ./Domain/
 COPY src/Services/Services.csproj ./Services/
 COPY src/Persistence/Persistence.csproj ./Persistence/
-RUN dotnet restore 'src/Server/Server.csproj'
+RUN dotnet restore './Server/Server.csproj'
 COPY . .
-RUN dotnet build 'src/Server/Server.csproj' -c Release -o /app/build
+RUN dotnet build './Server/Server.csproj' -c Release -o /app/build
 
 # Publish layer
 FROM build AS publish
-RUN dotnet publish 'src/Server/Server.csproj' -c Release -o /app/publish
+RUN dotnet publish './Server/Server.csproj' -c Release -o /app/publish
 
 # Final layer
 FROM base AS final
