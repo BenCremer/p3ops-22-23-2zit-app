@@ -29,4 +29,4 @@ WORKDIR /app
 COPY --from=publish /app/publish .
 
 # Entrypoint
-ENTRYPOINT ["dotnet", "src/Server/Server.dll"]
+ENTRYPOINT ["dotnet", "app/Server.dll"]
