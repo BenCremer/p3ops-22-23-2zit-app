@@ -1,6 +1,6 @@
 # Variables
 ARG repo=mcr.microsoft.com/dotnet
-ENV DOTNOT_ENVIRONMENT Production
+ENV DOTNOT_ENVIRONMENT test
 ENV DOTNET_ConnectionStrings_SQLDatabase server=192.168.56.1;uid=sa;pwd=TemporarySAPass123!;database=DevOps_EP3
 FROM $repo/aspnet:6.0 AS base
 WORKDIR /app
