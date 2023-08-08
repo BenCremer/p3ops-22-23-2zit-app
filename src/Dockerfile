@@ -1,9 +1,7 @@
 # Variables
 ARG repo=mcr.microsoft.com/dotnet
 ENV DOTNOT_ENVIRONMENT Production
-ENV DOTNET_ConnectionStrings_SQLDatabase Data Source=tcp:192.168.1.10,1433;Initial Catalog=DevOps_EP3;Integrated Security=False;User ID=SA;Password=TemporarySAPass123!;Encrypt=True;TrustServerCertificate=true;MultipleActiveResultSets=True
-
-# Base layer
+ENV DOTNET_ConnectionStrings_SQLDatabase server=192.168.56.1;uid=sa;pwd=TemporarySAPass123!;database=DevOps_EP3
 FROM $repo/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 8080/tcp
