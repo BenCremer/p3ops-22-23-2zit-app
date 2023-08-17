@@ -8,7 +8,7 @@ EXPOSE 8080/tcp
 FROM $repo/sdk:6.0 AS build
 WORKDIR /src
 ENV DOTNOT_ENVIRONMENT test
-ENV DOTNET_ConnectionStrings_SQLDatabase Server=192.168.56.10;Database=SportStore;User Id=sa;Password=TemporarySAPass123!;
+ENV DOTNET_ConnectionStrings_SQLDatabase Server=192.168.56.10;Database=SportStore;Uid=sa;Pwd=TemporarySAPass123!;
 COPY src/Server/Server.csproj ./Server/
 COPY src/Client/Client.csproj ./Client/
 COPY src/Shared/Shared.csproj ./Shared/
